@@ -1,0 +1,34 @@
+import discord
+import os
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    print('{0.user} Activated'.format(client))
+
+@client.event
+async def on_message(message):
+    if message.content.startswith('uwu'):
+        await message.channel.send('owo')
+
+    if message.content.startswith('hi'):
+        await message.channel.send('hello!')
+
+    if message.content.startswith('lol'):
+        await message.channel.send('ikr?')  
+
+    if message.content.startswith('@everyone'):
+        await message.channel.send('@everyone')
+
+    if message.content.startswith('what song should i listen to?'):
+        await message.channel.send('https://open.spotify.com/track/3AaiEsiqHO2ylnnOdWninE?si=e8cca7049b2a4b31')
+
+    if message.content.startswith('guess what?'):
+       await message.channel.send('what?')
+
+    if message.content.startswith('fuck you pink boy'):
+       await message.channel.send('Hey, if you wanna fight him, youll have to go through me first')
+
+
+client.run(os.getenv('TOKEN'))
